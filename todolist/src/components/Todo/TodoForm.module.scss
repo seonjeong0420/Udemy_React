@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.formfield {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 32px 72px;
+  background-color: #f8f9fa;
+  &__input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    &:focus {
+      border-color: #000;
+    }
+  }
+}
+
+.errorForm {
+  .formfield {
+    &__input {
+      border-color: #FF2A1D;
+    }
+  }
+}
