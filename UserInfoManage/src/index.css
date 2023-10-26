@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+}
+body,h1,h2,h3,h4,h5,h6,p,div,header,section,button,ul,ol,li {
+  margin: 0;
+  padding: 0;
+}
+ul,li {
+  list-style: none;
+}
+input {
+  outline: none;
+}
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.wrap_userInfo {
+  width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+}
