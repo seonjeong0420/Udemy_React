@@ -14,6 +14,10 @@ const AddUser = (props) => {
 
     // 부모에 이벤트 전달
     props.addUser(userInfo);
+    setUserInfo({
+      name: '',
+      age: ''
+    });
   }
 
   const inputChangeHandler = (input, value) => {
