@@ -8,6 +8,7 @@ const NewsPage = () => {
       <h1>The News Page</h1>
       <ul>
         <li>
+          {/* 새로고침 없이 렌더링 가능 */}
           <Link href="/news/nextjs-is-a-greate-framework">NextJS Is A Greate Framework</Link>
         </li>
         <li>Something Else</li>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import MeetupList from "../components/meetups/MeetupList";
 
 const DUMMY_MEETUPS = [
@@ -13,14 +13,14 @@ const DUMMY_MEETUPS = [
     id: "m2",
     title: "A Second Meetup",
     image: "https://img.freepik.com/free-photo/selective-focus-of-miniature-tourist-on-compass-over-map-with-plastic-toy-airplane-abstract-background-to-travel-concept_1423-180.jpg?w=2000",
-    address: "Some Address 5, 12345 Some City",
+    address: "Some Address 10, 12345 Some City",
     description: "This is a second Meetup!!",
   },
   {
     id: "m3",
     title: "A Third Meetup",
     image: "https://img.freepik.com/free-photo/selective-focus-of-miniature-tourist-on-compass-over-map-with-plastic-toy-airplane-abstract-background-to-travel-concept_1423-180.jpg?w=2000",
-    address: "Some Address 5, 12345 Some City",
+    address: "Some Address 15, 12345 Some City",
     description: "This is a third Meetup!!",
   },
 ];
@@ -40,12 +40,13 @@ const HomePage = (props) => {
   //   setLoadedMeetups(DUMMY_MEETUPS);
   // }, []);
   //   return <MeetupList meetups={loadedMeetups} />;
+
   return <MeetupList meetups={props.meetups} />;
 };
 
 /**
  * pages 폴더 안에 있는 컴포넌트 파일들에서만 가능 !!
- * export 할 함수명은 무조건 getStaticProps 으로 설정할것.(NextJS에서 정한 규칙)
+ * export 할 함수명은 무조건 getStaticProps 으로 설정 할 것.(NextJS에서 정한 규칙)
  */
 export async function getStaticProps() {
   // fetch data from an API
@@ -53,7 +54,8 @@ export async function getStaticProps() {
     props: {
       // 키값명은 props 고정 & 나머지는 자유
       meetups: DUMMY_MEETUPS,
-    },
+    }, 
+    revalidate: 10 // 점진적 정적 생성이라는 기능 사용. 숫자의 의미 
   };
 }
 
